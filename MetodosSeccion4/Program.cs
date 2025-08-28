@@ -9,6 +9,10 @@ namespace MetodosSeccion4
             int op,num1Argumento,num2Argumento;
             int restaResultado = 0;//declaramos la variable que va a contener el valor que devuelva el metodo restar
 
+            //declaramos las variables para dividir
+            decimal num1Ar,num2Ar,resulDiv;
+
+
             Console.WriteLine("Que operacion desea ejecutar?(1.Suma, 2.resta, 3.Multiplicación, 4.division)");
             op=Convert.ToInt32(Console.ReadLine());
 
@@ -29,9 +33,19 @@ namespace MetodosSeccion4
 
                     Multiplicar(num1Argumento, num2Argumento); //Llamamos al metodo y entre los () ponemos a las variables con los valores que queremos pasar al metodo o argumentos.
                     break;
+
+
                 case 4:
+                    Console.WriteLine("Ingrese un num");
+                    num1Ar = Convert.ToInt32(Console.ReadLine());
+
+                    Console.WriteLine("Ingrese un num");
+                    num2Ar = Convert.ToInt32(Console.ReadLine());
                    
+                    resulDiv = Dividir(num1Ar, num2Ar);// se le pasa los argumentos al metodo dividir "Dividir(num1Ar, num2Ar)" y se devuelve un valor "resulDiv = Dividir();"
+                    Console.WriteLine("El resultado de la división es: ", resulDiv);
                     break;
+                   
             
             }
             
@@ -78,6 +92,22 @@ namespace MetodosSeccion4
             int resultado;
             resultado = num1Pa * num2Pa;
             Console.WriteLine("el resultado es: {0} ", resultado);
+        }
+
+        //metodo con parametro que recibe un valor y devuelve un valor
+        static decimal Dividir (decimal num1, decimal num2) {
+            decimal resultado=0;
+            if (num2 != 0)
+            {
+                resultado = num2 / num1;
+               
+            }
+            else
+            {
+                Console.WriteLine("No se puede dividir con 0");
+                
+            }
+            return resultado;
         }
 
 
