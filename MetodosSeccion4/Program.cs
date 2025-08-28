@@ -110,6 +110,11 @@ namespace MetodosSeccion4
             return resultado;
         }
 
-
+        //static decimal IngresarNumero(String peticion) { 
+        //    decimal num1, num2;
+        //    Console.WriteLine("Ingrese un numero");
+        //    num1 = Convert.ToInt32(Console.ReadLine());
+        
+        //}
     }
 }
