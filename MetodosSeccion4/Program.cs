@@ -69,7 +69,7 @@ namespace MetodosSeccion4
         //metodo con parametro
         //los parametros son variables que se crean dentro de los () de un metodo y contienen la copia del valor que se esta mandando desde Main, son variables que reciben información desde fuera
 
-        //los argumentos son aquellas variables que envian una copia de su valor a los parametros
+        //los argumentos son aquellas variables que envian una copia de su valor a los parametros PREUBA DOS
 
         
 
