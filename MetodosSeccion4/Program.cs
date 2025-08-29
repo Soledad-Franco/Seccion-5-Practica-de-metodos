@@ -6,7 +6,8 @@ namespace MetodosSeccion4
     {
         static void Main(string[] args)
         {
-            int op,num1Argumento,num2Argumento;
+            int op;
+            decimal num1Argumento, num2Argumento;
             int restaResultado = 0;//declaramos la variable que va a contener el valor que devuelva el metodo restar
 
             //declaramos las variables para dividir
@@ -22,29 +23,34 @@ namespace MetodosSeccion4
                     break;
                 case 2:
                     restaResultado = Restar();//se le invoca al metodo restar y a el valor que devuelve
-                    Console.WriteLine("El resultado de la resta es: ", restaResultado);
+                    Console.WriteLine("El resultado de la resta es: {0}", restaResultado);
                     break;
                 case 3:
-                    Console.WriteLine("Ingrese un num");
-                    num1Argumento = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine("Ingrese un num");
-                    num2Argumento = Convert.ToInt32(Console.ReadLine());
+
+                    num1Argumento = IngresarNumero("Ingrese el primer num");
+                    num2Argumento = IngresarNumero("Ingrese el segundo num");
 
                     Multiplicar(num1Argumento, num2Argumento); //Llamamos al metodo y entre los () ponemos a las variables con los valores que queremos pasar al metodo o argumentos.
                     break;
 
 
-                case 4:
-                    Console.WriteLine("Ingrese un num");
-                    num1Ar = Convert.ToInt32(Console.ReadLine());
 
-                    Console.WriteLine("Ingrese un num");
-                    num2Ar = Convert.ToInt32(Console.ReadLine());
+                case 4:
+                   
+                    num1Ar = IngresarNumero("Ingrese el primer num");
+                    num2Ar = IngresarNumero("Ingrese el segundo num");
                    
                     resulDiv = Dividir(num1Ar, num2Ar);// se le pasa los argumentos al metodo dividir "Dividir(num1Ar, num2Ar)" y se devuelve un valor "resulDiv = Dividir();"
-                    Console.WriteLine("El resultado de la división es: ", resulDiv);
-                    break;
+                    if (resulDiv != 0)
+                    {
+                        Console.WriteLine("El resultado de la división es: {0}", resulDiv);
+                        break;
+                    }
+                    else {
+                        return;      
+                    }
+                   
                    
             
             }
@@ -62,7 +68,7 @@ namespace MetodosSeccion4
             b = Convert.ToInt32(Console.ReadLine());
 
             suma=a+b;
-            Console.WriteLine("El resultado es: ",suma);
+            Console.WriteLine("El resultado es: {0}",suma);
         }
 
 
@@ -87,9 +93,9 @@ namespace MetodosSeccion4
 
 
         //metodo con parametro que recibe un valor
-        static void Multiplicar(int num1Pa, int num2Pa)
+        static void Multiplicar(decimal num1Pa, decimal num2Pa)
         {
-            int resultado;
+            decimal resultado;
             resultado = num1Pa * num2Pa;
             Console.WriteLine("el resultado es: {0} ", resultado);
         }
@@ -99,7 +105,7 @@ namespace MetodosSeccion4
             decimal resultado=0;
             if (num2 != 0)
             {
-                resultado = num2 / num1;
+                resultado = num1 / num2;
                
             }
             else
@@ -110,11 +116,12 @@ namespace MetodosSeccion4
             return resultado;
         }
 
-        //static decimal IngresarNumero(String peticion) { 
-        //    decimal num1, num2;
-        //    Console.WriteLine("Ingrese un numero");
-        //    num1 = Convert.ToInt32(Console.ReadLine());
-        
-        //}
+        static decimal IngresarNumero(String peticion)
+        {
+            decimal num;
+            Console.WriteLine(peticion);
+            num = Convert.ToDecimal(Console.ReadLine());
+            return num;
+        }
     }
 }
