@@ -1,5 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
+using System.Security.Cryptography;
 
 
 namespace PasarporvalorVsPorReferencia
@@ -19,5 +20,10 @@ namespace PasarporvalorVsPorReferencia
             numPa = 30;
 
         }
+
+        //ref → La variable debe tener un valor antes de entrar al método.
+
+        //out → La variable puede estar vacía, pero el método tiene que asignarle un valor antes de terminar.
     }
 }
+        

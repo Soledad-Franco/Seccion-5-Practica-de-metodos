@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Metodos
 {
@@ -81,17 +78,17 @@ namespace Metodos
         //metodo que devuelve un valor 
         static int Restar()
         {
-            int a, b, suma;
+            int a, b, resta;
             Console.WriteLine("Ingrese un num");
             a = Convert.ToInt32(Console.ReadLine());
 
             Console.WriteLine("Ingrese un num");
             b = Convert.ToInt32(Console.ReadLine());
 
-            suma = a - b;
+            resta= a - b;
 
             //para devolver un valor
-            return suma;
+            return resta;
         }
 
 
